@@ -1,22 +1,12 @@
 #include <shlobj.h>
 #include <ctime>
 #include "f4se/PluginAPI.h"
-#include "f4se_common/f4se_version.h"
 #include "f4se/PapyrusVM.h"
 
 #include "StringAttributeAPIExport.hpp"
 #include "../Shared/MyTrace.h"
 
-#if F4SE_PRE_DECLARATIVE_LOAD
-	#define REQUIRED_RUNTIME RUNTIME_VERSION_1_10_163
-#endif
-#if _F4SE_DECLARATIVE_LOAD
-	#define REQUIRED_RUNTIME RUNTIME_VERSION_1_10_984
-#endif
-
-#ifndef REQUIRED_RUNTIME
-	#error Invalid project configuration
-#endif
+#include "../Shared/f4_runtime.h"
 
 
 PluginHandle g_pluginHandle = kPluginHandle_Invalid;
@@ -155,7 +145,7 @@ extern "C"
 		// register papyrus exports
 		g_papyrus->Register(RegisterExportingFunctions);
 
-		_MESSAGE("Loaded %s", StringAttributeAPIExport::pluginVersionString);
+		_MESSAGE("Loaded %s for %08X", StringAttributeAPIExport::pluginVersionString, REQUIRED_RUNTIME);
 		return true;
 	}
 
