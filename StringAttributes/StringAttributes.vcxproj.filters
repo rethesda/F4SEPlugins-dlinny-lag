@@ -144,12 +144,14 @@
       <Filter>f4se</Filter>
     </ClInclude>
     <ClInclude Include="DataTypeId.h" />
+    <ClInclude Include="..\Shared\f4_runtime.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="VersionInfo.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="exports.def" />
     <None Include="$(F4SEPath)\f4se\GameRTTI.inl">
       <Filter>f4se</Filter>
     </None>

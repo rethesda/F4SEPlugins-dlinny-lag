@@ -134,6 +134,9 @@
     </ClInclude>
     <ClInclude Include="TestDataProvider.hpp" />
     <ClInclude Include="DictTester.hpp" />
+    <ClInclude Include="..\Shared\f4_runtime.h">
+      <Filter>Shared</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(F4SEPath)\f4se\GameRTTI.inl">
